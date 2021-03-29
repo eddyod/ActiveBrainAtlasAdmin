@@ -41,7 +41,7 @@ defusedxml==0.7.0rc1
 diskcache==5.0.2
 distro==1.5.0
 dj-pagination==2.5.0
-Django==3.1.1
+Django==3.1.6
 django-allauth==0.42.0
 django-appconf==1.0.4
 django-auth-ldap==2.2.0
