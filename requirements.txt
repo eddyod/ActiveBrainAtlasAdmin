@@ -60,7 +60,7 @@ django-rest-auth==0.9.5
 django-revproxy==0.10.0
 django-rq==2.3.2
 django-sendfile==0.3.11
-djangorestframework==3.11.1
+djangorestframework==3.11.2
 djangorestframework-jwt==1.11.0
 docker==4.3.1
 docker-compose==1.27.3
