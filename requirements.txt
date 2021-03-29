@@ -10,7 +10,7 @@ av==8.0.2
 backcall==0.1.0
 bcrypt==3.2.0
 beautifulsoup4==4.8.2
-bleach==3.1.5
+bleach==3.3.0
 bootstrap4==0.1.0
 Brotli==1.0.9
 cached-property==1.5.2
