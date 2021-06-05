@@ -34,7 +34,7 @@ dash-table==4.11.0
 decorator==4.4.2
 defusedxml==0.7.0rc1
 dj-pagination==2.5.0
-Django==3.1.7
+Django==3.1.9
 django-allauth==0.42.0
 django-appconf==1.0.4
 django-bootstrap4==1.1.1
