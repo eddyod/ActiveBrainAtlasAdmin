@@ -16,7 +16,7 @@ import numpy as np
 from scipy.interpolate import splprep, splev
 from neuroglancer.serializers import AnnotationSerializer, AnnotationsSerializer, LineSerializer, RotationSerializer, UrlSerializer,  \
     AnimalInputSerializer, IdSerializer
-from neuroglancer.models import InputType, UrlModel, LayerData
+from neuroglancer.models import InputType, UrlModel, LayerData,Structure
 import logging
 logging.basicConfig()
 logger = logging.getLogger(__name__)
@@ -265,3 +265,8 @@ def index(request):
         'has_change_permission': False}
     return render(request, 'layer_data_group.html', data)
 
+def get_structure_list(request):
+    query_list = Structure.objects.filter(active=True)
+    abbreviation_list = [q.abbreviation for q in query_list]
+    data ={"landmark_abbreviations" : abbreviation_list}
+    return JsonResponse(data)

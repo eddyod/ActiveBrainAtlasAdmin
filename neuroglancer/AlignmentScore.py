@@ -51,7 +51,6 @@ class AlignmentScore:
         common_structures = list(sorted(common_structures))
         return common_structures
 
-
     def prepare_table_for_plot(self):
         """
         Notes, 30 Jun 2021
@@ -95,7 +94,6 @@ class AlignmentScore:
             df_brain['brain'] = brain
             df = df.append(df_brain, ignore_index=True)
         return df
-
 
     def add_scatter_trace(self,df,fig,rowi):
         colors = ["#ee6352","#08b2e3","#484d6d","#57a773"]

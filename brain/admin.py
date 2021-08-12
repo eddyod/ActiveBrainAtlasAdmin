@@ -1,5 +1,4 @@
 import os
-
 from django.contrib import admin
 #from django.contrib.admin.models import  LogEntry
 from django.forms import TextInput, Textarea, DateInput, NumberInput, Select
@@ -11,31 +10,23 @@ from django.utils.html import format_html
 from django.utils.safestring import mark_safe
 from django.urls import path
 from django.template.response import TemplateResponse
-
 from brain.forms import save_slide_model, TifInlineFormset
 from brain.models import (Animal, Histology, Injection, Virus, InjectionVirus,
                           OrganicLabel, ScanRun, Slide, SlideCziToTif, Section)
 
-
 class ExportCsvMixin:
     def export_as_csv(self, request, queryset):
-
         meta = self.model._meta
         excludes = ['histogram',  'image_tag']
         field_names = [field.name for field in meta.fields if field.name not in excludes]
-
         response = HttpResponse(content_type='text/csv')
         response['Content-Disposition'] = 'attachment; filename={}.csv'.format(meta)
         writer = csv.writer(response)
-
         writer.writerow(field_names)
         for obj in queryset:
             row = writer.writerow([getattr(obj, field) for field in field_names])
-
         return response
-
     export_as_csv.short_description = "Export Selected"
-
 
 class AtlasAdminModel(admin.ModelAdmin):
     formfield_overrides = {
@@ -69,7 +60,6 @@ class AtlasAdminModel(admin.ModelAdmin):
             'all': ('admin/css/thumbnail.css',)
         }
 
-
 @admin.register(Animal)
 class AnimalAdmin(AtlasAdminModel, ExportCsvMixin):
     list_display = ('prep_id', 'comments', 'histogram', 'created')
@@ -90,8 +80,6 @@ class AnimalAdmin(AtlasAdminModel, ExportCsvMixin):
             path('pipeline/', self.admin_site.admin_view(self.view_pipeline))
         ]
         return my_urls + urls
-
-
 
 @admin.register(Histology)
 class HistologyAdmin(AtlasAdminModel, ExportCsvMixin):
@@ -268,7 +256,6 @@ class SlideCziToTifAdmin(AtlasAdminModel, ExportCsvMixin):
 
     def has_add_permission(self, request, obj=None):
         return False
-
 
 class ExportSections:
     def export_sections(self, request, queryset):

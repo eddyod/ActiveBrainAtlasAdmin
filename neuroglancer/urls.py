@@ -15,6 +15,6 @@ urlpatterns = [
     path('rotations', views.Rotations.as_view()),
     # path('ajax/load-layers/', views.load_layers, name='ajax_load_layers'),
     # path('showdata', views.index),
-    path('ajax_datatable/layerdata/', ajax_datatable_views.LayerDataView.as_view(), name='datatabletest')
-  
+    path('ajax_datatable/layerdata/', ajax_datatable_views.LayerDataView.as_view(), name='datatabletest'),
+    path('landmark_abbreviations',views.get_structure_list,name = 'landmarklist'),
 ]

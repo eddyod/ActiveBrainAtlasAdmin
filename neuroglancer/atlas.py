@@ -5,7 +5,6 @@ so we can resuse them througout the code.
 """
 import numpy as np
 from django.contrib.auth.models import User
-
 from neuroglancer.models import Structure, LayerData, LAUREN_ID, ATLAS_Z_BOX_SCALE
 from brain.models import Animal, ScanRun
 from abakit.registration.algorithm import umeyama

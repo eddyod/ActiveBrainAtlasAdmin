@@ -1,8 +1,6 @@
 from io import BytesIO
-
 import barcode
 from barcode.writer import ImageWriter
-
 from django.core.files.base import ContentFile
 
 #from scan.models import Barcode

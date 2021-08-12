@@ -84,7 +84,6 @@ class TestSlideForms(TransactionTestCase):
         ma = SlideAdmin(Slide, self.site)
         super_user = User.objects.create_superuser(username='super', email='super@email.org',
                                                    password='pass')
-
         request.user = super_user
         form = ma.get_form(self, request, change=None)
         """

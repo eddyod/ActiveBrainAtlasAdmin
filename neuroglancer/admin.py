@@ -37,7 +37,6 @@ class UrlModelAdmin(admin.ModelAdmin):
 
     def pretty_url(self, instance):
             """Function to display pretty version of our data"""
-
             # Convert the data to sorted, indented JSON
             response = json.dumps(instance.url, sort_keys=True, indent=2)
             # Truncate the data. Alter as needed
@@ -50,7 +49,6 @@ class UrlModelAdmin(admin.ModelAdmin):
             style = "<style>" + formatter.get_style_defs() + "</style><br>"
             # Safe the output
             return mark_safe(style + response)
-
     pretty_url.short_description = 'Formatted URL'    
 
 
@@ -120,7 +118,7 @@ class PointsAdmin(admin.ModelAdmin):
         :return: 3dGraph in a django template
         """
         urlModel = UrlModel.objects.get(pk=id)
-        df = urlModel.points
+        df = ukrlModel.points
         plot_div = "No points available"
         if df is not None and len(df) > 0:
             self.display_point_links = True

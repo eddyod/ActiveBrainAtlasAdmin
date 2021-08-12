@@ -45,10 +45,6 @@ class LayerDataView(AjaxDatatableView):
         row['z_f'] = format_html(f"<div style='text-align:left;'>{znumber:,}</div>")
         return
 
-
-
-
-
     """
     def dispatch(self, request, *args, **kwargs):
         return super().dispatch(request, *args, **kwargs)

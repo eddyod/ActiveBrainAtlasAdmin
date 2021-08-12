@@ -32,8 +32,7 @@ class AnnotationChoice(str, Enum):
 class UrlModel(models.Model):
     id = models.BigAutoField(primary_key=True)
     url = models.JSONField()
-    person = models.ForeignKey(settings.AUTH_USER_MODEL, models.CASCADE, null=True, db_column="person_id",
-                               verbose_name="User")
+    person = models.ForeignKey(settings.AUTH_USER_MODEL, models.CASCADE, null=True, db_column="person_id",verbose_name="User")
     public = models.BooleanField(default = True, db_column='active')
     vetted = models.BooleanField(default = False)
     created = models.DateTimeField(auto_now_add=True)
@@ -135,7 +134,6 @@ class UrlModel(models.Model):
             if len(df) > 0:
                 result = "display:inline;"
         return result
-
 
     def find_values(self, id, json_repr):
         results = []
