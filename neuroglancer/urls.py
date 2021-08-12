@@ -14,7 +14,13 @@ urlpatterns = [
     path('rotation/<str:prep_id>/<str:input_type>/<int:person_id>', views.Rotation.as_view()),
     path('rotations', views.Rotations.as_view()),
     # path('ajax/load-layers/', views.load_layers, name='ajax_load_layers'),
+<<<<<<< HEAD
     # path('showdata', views.index),
     path('ajax_datatable/layerdata/', ajax_datatable_views.LayerDataView.as_view(), name='datatabletest'),
     path('landmark_abbreviations',views.get_structure_list,name = 'landmarklist'),
+=======
+    path('showdata', views.index, name='neuroglancer-list'),
+    path('ajax_datatable/layerdata/', ajax_datatable_views.LayerDataView.as_view(), name='datatabletest')
+  
+>>>>>>> 2a08ba88a0f9a15b45b5d3b3946b1abd854afda5
 ]
