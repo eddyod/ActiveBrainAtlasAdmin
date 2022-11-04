@@ -165,7 +165,7 @@ terminado==0.9.1
 testpath==0.4.4
 tornado==6.1
 traitlets==4.3.3
-Twisted==20.3.0
+Twisted==22.10.0
 txaio==20.4.1
 typing-extensions==3.7.4.3
 uritemplate==3.0.1
